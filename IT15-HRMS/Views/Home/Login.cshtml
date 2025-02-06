@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/login.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - HRHub</title>
+</head>
+<body>
+    <div class="bg-image">
+
+        <div class="login-container">
+            <h2>Sign in to account</h2>
+            <form method="post" action="/Login/Login">
+                <input type="email" name="Email" placeholder="Email Address" required>
+                <input type="password" name="Password" placeholder="Password" required>
+                <label>
+                    <input type="checkbox" name="RememberMe"> Remember password
+                </label>
+                <a href="/Account/ForgotPassword">Forgot password?</a>
+                <button type="submit">Sign in</button>
+            </form>
+
+            <!-- Add Sign Up Link -->
+            <div class="sign-up">
+                <p>Don't have an account? <a href="/Employee/Register">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

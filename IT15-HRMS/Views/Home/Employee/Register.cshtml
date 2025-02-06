@@ -1,0 +1,26 @@
+﻿@model IT15_HRMS.Models.Employee
+
+<form asp-action="Register" method="post">
+    <div>
+        <label for="FirstName">First Name</label>
+        <input type="text" asp-for="FirstName" required />
+    </div>
+    <div>
+        <label for="LastName">Last Name</label>
+        <input type="text" asp-for="LastName" required />
+    </div>
+    <div>
+        <label for="Username">Username</label>
+        <input type="text" asp-for="Username" required />
+    </div>
+    <div>
+        <label for="Email">Email</label>
+        <input type="email" asp-for="Email" required />
+    </div>
+    <div>
+        <label for="Password">Password</label>
+        <input type="password" asp-for="PasswordHash" required />
+    </div>
+
+    <button type="submit">Register</button>
+</form>

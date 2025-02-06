@@ -1,0 +1,95 @@
+﻿
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-image {
+    background-image: url('/images/Hrhub.jpg'); /* Ensure this path is correct */
+    filter: brightness(0.8);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the entire element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Increased width for better readability */
+    text-align: center;
+}
+
+    .login-container h2 {
+        margin-bottom: 20px;
+        font-size: 28px; /* Increased font size */
+        color: #333;
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+        width: 100%;
+        padding: 15px; /* Increased padding */
+        margin: 10px 0 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px; /* Increased font size */
+    }
+
+    .login-container button {
+        width: 100%;
+        padding: 15px; /* Increased padding */
+        background-color: #6c5ce7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px; /* Increased font size */
+    }
+
+        .login-container button:hover {
+            background-color: #5a4bcf;
+        }
+
+    .login-container a {
+        display: block;
+        margin-top: 10px;
+        text-align: right;
+        color: #6c5ce7;
+        text-decoration: none;
+        font-size: 16px; /* Increased font size */
+    }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+.logo {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+    .logo img {
+        height: 50px;
+        margin-right: 10px;
+    }
