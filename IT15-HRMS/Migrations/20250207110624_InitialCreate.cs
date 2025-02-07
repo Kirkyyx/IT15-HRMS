@@ -6,24 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace IT15_HRMS.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateEmployeeModel : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Info",
-                table: "Info");
-
-            migrationBuilder.RenameTable(
-                name: "Info",
-                newName: "Infos");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Infos",
-                table: "Infos",
-                column: "Id");
-
             migrationBuilder.CreateTable(
                 name: "Admins",
                 columns: table => new
@@ -62,6 +49,22 @@ namespace IT15_HRMS.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Employees", x => x.EmployeeId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Infos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LN = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
+                    FN = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    MD = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Age = table.Column<int>(type: "int", maxLength: 2, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Infos", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -199,6 +202,9 @@ namespace IT15_HRMS.Migrations
                 name: "Attendances");
 
             migrationBuilder.DropTable(
+                name: "Infos");
+
+            migrationBuilder.DropTable(
                 name: "Onboardings");
 
             migrationBuilder.DropTable(
@@ -206,19 +212,6 @@ namespace IT15_HRMS.Migrations
 
             migrationBuilder.DropTable(
                 name: "Employees");
-
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Infos",
-                table: "Infos");
-
-            migrationBuilder.RenameTable(
-                name: "Infos",
-                newName: "Info");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Info",
-                table: "Info",
-                column: "Id");
         }
     }
 }
