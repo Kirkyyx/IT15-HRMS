@@ -10,14 +10,17 @@ namespace IT15_HRMS.Services
         }
 
         // DbSet properties representing the tables
-
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Payroll> Payrolls { get; set; }
         public DbSet<Applicant> Applicants { get; set; }
         public DbSet<Onboarding> Onboardings { get; set; }
-        
+        public DbSet<PayrollStatus> PayrollStatuses { get; set; }
+        public DbSet<AnnualPerformance> AnnualPerformances { get; set; }
+        public DbSet<PTO> PTOs { get; set; }
+        public DbSet<PTOBalance> PTOBalances { get; set; }
+        public DbSet<WorkingHours> WorkingHours { get; set; } // Fixed typo
 
         // Fluent API configurations for relationships (if needed)
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -54,4 +57,3 @@ namespace IT15_HRMS.Services
         }
     }
 }
-

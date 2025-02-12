@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IT15_HRMS.Models
 {
-    public class PTO
+    public class PTOBalance
     {
         [Key]
         public int Id { get; set; }  // Primary Key
@@ -18,21 +18,15 @@ namespace IT15_HRMS.Models
         public string LeaveCategory { get; set; }  // PTO, Sick Leave, Bereavement, Maternity Leave
 
         [Required]
-        public DateTime StartDate { get; set; }  // Start date of leave
+        public int AllocatedDays { get; set; }  // Total allocated leave days
 
         [Required]
-        public DateTime EndDate { get; set; }  // End date of leave
+        public int UsedDays { get; set; }  // Number of used leave days
+
+        [NotMapped]  // This is calculated, not stored in DB
+        public int RemainingDays => AllocatedDays - UsedDays;
 
         [Required]
-        public int DaysRequested { get; set; }  // Number of leave days requested
-
-        [Required]
-        [MaxLength(20)]
-        public string Status { get; set; }  // Pending, Approved, Rejected
-
-        public string? Reason { get; set; }  // Optional reason for leave
-
-        [Required]
-        public DateTime RequestDate { get; set; }  // Date when leave was requested
+        public DateTime LastUpdated { get; set; }  // Last time PTO balance was updated
     }
 }
